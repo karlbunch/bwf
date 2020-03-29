@@ -233,7 +233,7 @@ function BWF:CHAT_MSG_BN_WHISPER(self, msg, sender,_,_,_,_,_,_,_,_,_,_,bnetIDAcc
 end
 
 function BWF:SUPER_TRACKED_QUEST_CHANGED(self, questID)
-	if UnitIsGroupLeader("player") then
+	if UnitIsGroupLeader("player") and questID ~= nil then
 		C_ChatInfo.SendAddonMessage("BWFmsg", "TrackWQ+"..questID, "RAID")
 	end
 end
